@@ -1,0 +1,426 @@
+<html>
+ <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css">.row{margin-right:0px; margin-left:0px;} .skills{text-align:center;padding-right:20px;line-height:40px;color:white;margin-bottom:2px}.passed{background-color:green}.failed{background-color:#f44336}.skipped{background-color:#808080}.testName{background-color:#406084}.total{background-color:#a7856b}.executionTime{background-color:#e59866}.padding-logs{padding:1cm}body{padding:0;font:14px "Calibri",Lucida Grande;line-height:1.5}.checkbox{padding-left:0;margin-top:-5px}.checkbox label{display:inline-block;position:relative;padding-left:5px}.checkbox label::before{content:"";display:inline-block;position:absolute;width:17px;height:17px;left:0;margin-left:-20px;border:1px solid #7f7fff;border-radius:3px;background-color:#fff;-webkit-transition:border .15s ease-in-out,color .15s ease-in-out;-o-transition:border .15s ease-in-out,color .15s ease-in-out;transition:border .15s ease-in-out,color .15s ease-in-out}.checkbox label::after{display:inline-block;position:absolute;width:16px;height:16px;left:0;top:0;margin-left:-10px;padding-left:3px;padding-top:1px;font-size:11px;color:#555}.checkbox input[type="checkbox"]{opacity:0}.checkbox input[type="checkbox"]:focus+label::before{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}.checkbox input[type="checkbox"]:checked+label::after{font-family:"FontAwesome";content:"\f00c";margin-left:-20px}.checkbox input[type="checkbox"]:disabled+label{opacity:.65}.checkbox input[type="checkbox"]:disabled+label::before{background-color:#eee;cursor:not-allowed}.checkbox.checkbox-circle+label::before{border-radius:50%}.checkbox.checkbox-inline{margin-top:0}.checkbox-primary input[type="checkbox"]:checked+label::before{background-color:#428bca;border-color:#428bca}.checkbox-primary input[type="checkbox"]:checked+label::after{color:#fff}.checkbox-danger input[type="checkbox"]:checked+label::before{background-color:#d9534f;border-color:#d9534f}.checkbox-danger input[type="checkbox"]:checked+label::after{color:#fff}.checkbox-info input[type="checkbox"]:checked+label::before{background-color:#5bc0de;border-color:#5bc0de}.checkbox-info input[type="checkbox"]:checked+label::after{color:#fff}.checkbox-warning input[type="checkbox"]:checked+label::before{background-color:#f0ad4e;border-color:#f0ad4e}.checkbox-warning input[type="checkbox"]:checked+label::after{color:#fff}.checkbox-success input[type="checkbox"]:checked+label::before{background-color:#5cb85c;border-color:#5cb85c}.checkbox-success input[type="checkbox"]:checked+label::after{color:#fff}.box{color:black;padding:4px;margin-top:4px;border-bottom:1px double;border-top:1px double;border-left: 1px double;border-right: 1px double;border-color:gray}a{font-color:blue}.red{background:#ffb699}.green{background:#90ee90}.yellow{background:#ff6}.blue{background:#f0e68c}#mainTable{border-collapse:collapse}*{font-family:Tahoma,Calibri Light!important}</style> 
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+ </head>
+ <body background="screenshots/Background.png">
+  <script language="javascript"> function toggle(id,id2) {      var ele = document.getElementById(id);      var text = document.getElementById(id2);      if(ele.style.display == "block") {            ele.style.display = "none";            text.innerHTML = "[+]";      }      else {            ele.style.display = "block";            text.innerHTML = "[-]";      }}</script>
+  <script type="text/javascript">$('#fails').show();$('#pass').show();$('#skip').show();$(document).ready(function(){$("input:checkbox").change(function() {$.each($('input[type="checkbox"]'), function (key, value) {var inputValue = $(this).attr("value");var ischecked= $(this).is(':checked');if(ischecked){$("." + inputValue).show();}else{$("." + inputValue).hide();}});});});</script>
+  <meta charset="utf-8">
+  <title>Automation Report</title>
+  <style type="text/css">body{margin:5px;} .box{color: black; padding: 4px; margin-top: 4px;  border-bottom: 1px double;  border-top: 1px double; border-color:gray;}.red{ background: #ffb699; }.green{ background: #90EE90; }.yellow{ background: #FFFF66; }.blue{ background: #F0E68C; }#mainTable {border-collapse: collapse;}* {font-family: Tahoma, Calibri Light !important;}</style>
+  <div class="\&quot;row\&quot;">
+   <table border="0" style="width:100%">
+    <tbody>
+     <tr>
+      <td>
+       <table>
+        <tbody>
+         <tr>
+          <td align="left" width="10%"><img style="margin:5px;" src="screenshots/MavericLogo.png" border="2">&nbsp;</td>
+         </tr>
+        </tbody>
+       </table></td>
+      <td align="center"><b>
+        <left>
+         <font style="font-size: 25px;"> Test Application Automation Results </font>
+        </left></b></td>
+      <td>
+       <div name="jenkin_compiler_name" align="right">
+        <table style="background-color:rgba(0, 0, 0, 0);">
+         <tbody>
+          <tr>
+           <td><b>
+             <div id="runCompletedOn" class="label label-danger">
+              Tue Jul 28 01:09:20 IST 2020
+             </div><b></b></b></td>
+          </tr>
+         </tbody>
+        </table>
+       </div></td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <div class="row">
+   <div class="col-xs-3 skills testName ">
+    Environment : <span id="environment">TestNG Suite</span>
+   </div>
+   <div class="col-xs-3 skills total ">
+    Total Test Cases : <span id="totalTestCases">1</span>
+   </div>
+   <div class="col-xs-3 skills passed">
+    Execution Time :<span id="executionTime">00:02:36</span>
+   </div>
+   <div class="col-xs-3 skills executionTime">
+    Browser : <span id="browser">chrome</span>
+   </div>
+   <div class="col-xs-3 skills passed">
+    Passed Test Cases : <span id="passedCount">1</span>
+   </div>
+   <div class="col-xs-3 skills failed">
+    Failed Test Cases :<span id="failedCount">0</span>
+   </div>
+   <div class="col-xs-3 skills testName">
+    Retry Count : 0<span id="retryCount"></span>
+   </div>
+   <div class="col-xs-3 skills total">
+    Groups : <span id="keywords">@ParaBankTest</span>
+   </div>
+  </div>
+  <br>
+  <div class="row">
+   <h4 class="col-xs-12 col-sm-6 pull-left"><b><font color="#24468D">Report Details</font></b></h4>
+   <div class="col-xs-12 col-sm-6">
+    <div style="margin-left: 50%;">
+     <div class="col-xs-4 col-sm-offset-3 col-sm-3 checkbox checkbox-success">
+      <input type="checkbox" id="pass" value="green" name="checkbox" checked><label for="pass">Passed</label>
+     </div>
+     <div class="col-xs-4 col-sm-3 checkbox checkbox-danger">
+      <input type="checkbox" id="fails" value="red" name="checkbox" checked><label for="fails">Failed</label>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="pass" class="blue box padding-logs">
+   Feature : ParasBank&nbsp;<a style="font-size:13px;vertical-align:2px;" id="ParasBank_passed_0" href="javascript:toggle('ParasBank_passed','ParasBank_passed_0');"> [+]</a><a style="position: absolute;right: 9;color:black;"> Total Scenarios : 3, Passed Scenarios : 3, Failed Scenarios : 0</a>
+   <div id="ParasBank_passed" style="display: none; background-color: #F0E68C; margin-left: 0.5cm; ">
+    <div class="messages">
+     <div id="pass" class="green box padding-logs">
+      Scenario : To do a fund transfer in ParasBank Site&nbsp;<a style="font-size:13px;vertical-align:2px;" id="To do a fund transfer in ParasBank Site_passed_001092118717" href="javascript:toggle('To do a fund transfer in ParasBank Site_passed_01092118717','To do a fund transfer in ParasBank Site_passed_001092118717');"> [+]</a>
+      <div id="To do a fund transfer in ParasBank Site_passed_01092118717" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+       <div class="messages">
+        <div id="pass" class="green box padding-logs">
+         Given I Launch the parasBank Site<a style="font-size:13px;vertical-align:2px;" id="step11_passed_00109211851" href="javascript:toggle('step11_passed0109211851','step11_passed_00109211851');"> [+]</a>
+         <div id="step11_passed0109211851" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Input the User Name and password and click login "Sam58" and "123"<a style="font-size:13px;vertical-align:2px;" id="step12_passed_00109211862" href="javascript:toggle('step12_passed0109211862','step12_passed_00109211862');"> [+]</a>
+         <div id="step12_passed0109211862" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Navigate to Open New Account section<a style="font-size:13px;vertical-align:2px;" id="step13_passed_00109211863" href="javascript:toggle('step13_passed0109211863','step13_passed_00109211863');"> [+]</a>
+         <div id="step13_passed0109211863" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         When I Select the Account Type "SAVINGS" and Click Open new accountButton<a style="font-size:13px;vertical-align:2px;" id="step14_passed_00109211864" href="javascript:toggle('step14_passed0109211864','step14_passed_00109211864');"> [+]</a>
+         <div id="step14_passed0109211864" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages">
+           28-Jul-2020 01:07:06 AM : <a target="_blank" href="screenshots/screenshot_1.png">Details inputted for New Account opening </a>
+           <br>28-Jul-2020 01:07:09 AM : <a target="_blank" href="screenshots/screenshot_2.png">New Account opened </a>
+           <br>
+          </div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         Then A New account is opened<a style="font-size:13px;vertical-align:2px;" id="step15_passed_00109211865" href="javascript:toggle('step15_passed0109211865','step15_passed_00109211865');"> [+]</a>
+         <div id="step15_passed0109211865" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         When I Click the Transfer Funds option<a style="font-size:13px;vertical-align:2px;" id="step16_passed_00109211866" href="javascript:toggle('step16_passed0109211866','step16_passed_00109211866');"> [+]</a>
+         <div id="step16_passed0109211866" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Input the Amount 10 to be transferred<a style="font-size:13px;vertical-align:2px;" id="step17_passed_00109211867" href="javascript:toggle('step17_passed0109211867','step17_passed_00109211867');"> [+]</a>
+         <div id="step17_passed0109211867" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Select the Account from which transfer to happen<a style="font-size:13px;vertical-align:2px;" id="step18_passed_00109211868" href="javascript:toggle('step18_passed0109211868','step18_passed_00109211868');"> [+]</a>
+         <div id="step18_passed0109211868" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Click TransferButton<a style="font-size:13px;vertical-align:2px;" id="step19_passed_00109211869" href="javascript:toggle('step19_passed0109211869','step19_passed_00109211869');"> [+]</a>
+         <div id="step19_passed0109211869" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         Then Fund transfer is complete<a style="font-size:13px;vertical-align:2px;" id="step110_passed_001092118610" href="javascript:toggle('step110_passed01092118610','step110_passed_001092118610');"> [+]</a>
+         <div id="step110_passed01092118610" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         When I Click the Accounts Overview Option<a style="font-size:13px;vertical-align:2px;" id="step111_passed_001092118611" href="javascript:toggle('step111_passed01092118611','step111_passed_001092118611');"> [+]</a>
+         <div id="step111_passed01092118611" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Select the Account from the table<a style="font-size:13px;vertical-align:2px;" id="step112_passed_001092118612" href="javascript:toggle('step112_passed01092118612','step112_passed_001092118612');"> [+]</a>
+         <div id="step112_passed01092118612" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         Then Details of the Account Displayed<a style="font-size:13px;vertical-align:2px;" id="step113_passed_001092118713" href="javascript:toggle('step113_passed01092118713','step113_passed_001092118713');"> [+]</a>
+         <div id="step113_passed01092118713" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages">
+           28-Jul-2020 01:07:23 AM : <a target="_blank" href="screenshots/screenshot_3.png">Navigated to Account details Screen </a>
+           <br>
+          </div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Account activity details displayed is exported to excel<a style="font-size:13px;vertical-align:2px;" id="step114_passed_001092118714" href="javascript:toggle('step114_passed01092118714','step114_passed_001092118714');"> [+]</a>
+         <div id="step114_passed01092118714" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         When I Click Logout option<a style="font-size:13px;vertical-align:2px;" id="step115_passed_001092118715" href="javascript:toggle('step115_passed01092118715','step115_passed_001092118715');"> [+]</a>
+         <div id="step115_passed01092118715" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         Then Successfully logged out from parasbank Site<a style="font-size:13px;vertical-align:2px;" id="step116_passed_001092118716" href="javascript:toggle('step116_passed01092118716','step116_passed_001092118716');"> [+]</a>
+         <div id="step116_passed01092118716" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div id="pass" class="green box padding-logs">
+      Scenario : To do a fund transfer in ParasBank Site&nbsp;<a style="font-size:13px;vertical-align:2px;" id="To do a fund transfer in ParasBank Site_passed_001092118734" href="javascript:toggle('To do a fund transfer in ParasBank Site_passed_01092118734','To do a fund transfer in ParasBank Site_passed_001092118734');"> [+]</a>
+      <div id="To do a fund transfer in ParasBank Site_passed_01092118734" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+       <div class="messages">
+        <div id="pass" class="green box padding-logs">
+         Given I Launch the parasBank Site<a style="font-size:13px;vertical-align:2px;" id="step21_passed_001092118718" href="javascript:toggle('step21_passed01092118718','step21_passed_001092118718');"> [+]</a>
+         <div id="step21_passed01092118718" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Input the User Name and password and click login "Sam58" and "123"<a style="font-size:13px;vertical-align:2px;" id="step22_passed_001092118719" href="javascript:toggle('step22_passed01092118719','step22_passed_001092118719');"> [+]</a>
+         <div id="step22_passed01092118719" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Navigate to Open New Account section<a style="font-size:13px;vertical-align:2px;" id="step23_passed_001092118720" href="javascript:toggle('step23_passed01092118720','step23_passed_001092118720');"> [+]</a>
+         <div id="step23_passed01092118720" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         When I Select the Account Type "CHECKING" and Click Open new accountButton<a style="font-size:13px;vertical-align:2px;" id="step24_passed_001092118721" href="javascript:toggle('step24_passed01092118721','step24_passed_001092118721');"> [+]</a>
+         <div id="step24_passed01092118721" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages">
+           28-Jul-2020 01:07:56 AM : <a target="_blank" href="screenshots/screenshot_4.png">Details inputted for New Account opening </a>
+           <br>28-Jul-2020 01:07:59 AM : <a target="_blank" href="screenshots/screenshot_5.png">New Account opened </a>
+           <br>
+          </div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         Then A New account is opened<a style="font-size:13px;vertical-align:2px;" id="step25_passed_001092118722" href="javascript:toggle('step25_passed01092118722','step25_passed_001092118722');"> [+]</a>
+         <div id="step25_passed01092118722" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         When I Click the Transfer Funds option<a style="font-size:13px;vertical-align:2px;" id="step26_passed_001092118723" href="javascript:toggle('step26_passed01092118723','step26_passed_001092118723');"> [+]</a>
+         <div id="step26_passed01092118723" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Input the Amount 20 to be transferred<a style="font-size:13px;vertical-align:2px;" id="step27_passed_001092118724" href="javascript:toggle('step27_passed01092118724','step27_passed_001092118724');"> [+]</a>
+         <div id="step27_passed01092118724" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Select the Account from which transfer to happen<a style="font-size:13px;vertical-align:2px;" id="step28_passed_001092118725" href="javascript:toggle('step28_passed01092118725','step28_passed_001092118725');"> [+]</a>
+         <div id="step28_passed01092118725" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Click TransferButton<a style="font-size:13px;vertical-align:2px;" id="step29_passed_001092118726" href="javascript:toggle('step29_passed01092118726','step29_passed_001092118726');"> [+]</a>
+         <div id="step29_passed01092118726" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         Then Fund transfer is complete<a style="font-size:13px;vertical-align:2px;" id="step210_passed_001092118727" href="javascript:toggle('step210_passed01092118727','step210_passed_001092118727');"> [+]</a>
+         <div id="step210_passed01092118727" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         When I Click the Accounts Overview Option<a style="font-size:13px;vertical-align:2px;" id="step211_passed_001092118728" href="javascript:toggle('step211_passed01092118728','step211_passed_001092118728');"> [+]</a>
+         <div id="step211_passed01092118728" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Select the Account from the table<a style="font-size:13px;vertical-align:2px;" id="step212_passed_001092118729" href="javascript:toggle('step212_passed01092118729','step212_passed_001092118729');"> [+]</a>
+         <div id="step212_passed01092118729" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         Then Details of the Account Displayed<a style="font-size:13px;vertical-align:2px;" id="step213_passed_001092118730" href="javascript:toggle('step213_passed01092118730','step213_passed_001092118730');"> [+]</a>
+         <div id="step213_passed01092118730" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages">
+           28-Jul-2020 01:08:13 AM : <a target="_blank" href="screenshots/screenshot_6.png">Navigated to Account details Screen </a>
+           <br>
+          </div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Account activity details displayed is exported to excel<a style="font-size:13px;vertical-align:2px;" id="step214_passed_001092118731" href="javascript:toggle('step214_passed01092118731','step214_passed_001092118731');"> [+]</a>
+         <div id="step214_passed01092118731" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         When I Click Logout option<a style="font-size:13px;vertical-align:2px;" id="step215_passed_001092118732" href="javascript:toggle('step215_passed01092118732','step215_passed_001092118732');"> [+]</a>
+         <div id="step215_passed01092118732" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         Then Successfully logged out from parasbank Site<a style="font-size:13px;vertical-align:2px;" id="step216_passed_001092118733" href="javascript:toggle('step216_passed01092118733','step216_passed_001092118733');"> [+]</a>
+         <div id="step216_passed01092118733" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div id="pass" class="green box padding-logs">
+      Scenario : To do a fund transfer in ParasBank Site&nbsp;<a style="font-size:13px;vertical-align:2px;" id="To do a fund transfer in ParasBank Site_passed_001092118851" href="javascript:toggle('To do a fund transfer in ParasBank Site_passed_01092118851','To do a fund transfer in ParasBank Site_passed_001092118851');"> [+]</a>
+      <div id="To do a fund transfer in ParasBank Site_passed_01092118851" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+       <div class="messages">
+        <div id="pass" class="green box padding-logs">
+         Given I Launch the parasBank Site<a style="font-size:13px;vertical-align:2px;" id="step31_passed_001092118735" href="javascript:toggle('step31_passed01092118735','step31_passed_001092118735');"> [+]</a>
+         <div id="step31_passed01092118735" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Input the User Name and password and click login "Sam58" and "123"<a style="font-size:13px;vertical-align:2px;" id="step32_passed_001092118836" href="javascript:toggle('step32_passed01092118836','step32_passed_001092118836');"> [+]</a>
+         <div id="step32_passed01092118836" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Navigate to Open New Account section<a style="font-size:13px;vertical-align:2px;" id="step33_passed_001092118837" href="javascript:toggle('step33_passed01092118837','step33_passed_001092118837');"> [+]</a>
+         <div id="step33_passed01092118837" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         When I Select the Account Type "CHECKING" and Click Open new accountButton<a style="font-size:13px;vertical-align:2px;" id="step34_passed_001092118838" href="javascript:toggle('step34_passed01092118838','step34_passed_001092118838');"> [+]</a>
+         <div id="step34_passed01092118838" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages">
+           28-Jul-2020 01:08:48 AM : <a target="_blank" href="screenshots/screenshot_7.png">Details inputted for New Account opening </a>
+           <br>28-Jul-2020 01:08:51 AM : <a target="_blank" href="screenshots/screenshot_8.png">New Account opened </a>
+           <br>
+          </div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         Then A New account is opened<a style="font-size:13px;vertical-align:2px;" id="step35_passed_001092118839" href="javascript:toggle('step35_passed01092118839','step35_passed_001092118839');"> [+]</a>
+         <div id="step35_passed01092118839" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         When I Click the Transfer Funds option<a style="font-size:13px;vertical-align:2px;" id="step36_passed_001092118840" href="javascript:toggle('step36_passed01092118840','step36_passed_001092118840');"> [+]</a>
+         <div id="step36_passed01092118840" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Input the Amount 30 to be transferred<a style="font-size:13px;vertical-align:2px;" id="step37_passed_001092118841" href="javascript:toggle('step37_passed01092118841','step37_passed_001092118841');"> [+]</a>
+         <div id="step37_passed01092118841" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Select the Account from which transfer to happen<a style="font-size:13px;vertical-align:2px;" id="step38_passed_001092118842" href="javascript:toggle('step38_passed01092118842','step38_passed_001092118842');"> [+]</a>
+         <div id="step38_passed01092118842" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Click TransferButton<a style="font-size:13px;vertical-align:2px;" id="step39_passed_001092118843" href="javascript:toggle('step39_passed01092118843','step39_passed_001092118843');"> [+]</a>
+         <div id="step39_passed01092118843" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         Then Fund transfer is complete<a style="font-size:13px;vertical-align:2px;" id="step310_passed_001092118844" href="javascript:toggle('step310_passed01092118844','step310_passed_001092118844');"> [+]</a>
+         <div id="step310_passed01092118844" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         When I Click the Accounts Overview Option<a style="font-size:13px;vertical-align:2px;" id="step311_passed_001092118845" href="javascript:toggle('step311_passed01092118845','step311_passed_001092118845');"> [+]</a>
+         <div id="step311_passed01092118845" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Select the Account from the table<a style="font-size:13px;vertical-align:2px;" id="step312_passed_001092118846" href="javascript:toggle('step312_passed01092118846','step312_passed_001092118846');"> [+]</a>
+         <div id="step312_passed01092118846" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         Then Details of the Account Displayed<a style="font-size:13px;vertical-align:2px;" id="step313_passed_001092118847" href="javascript:toggle('step313_passed01092118847','step313_passed_001092118847');"> [+]</a>
+         <div id="step313_passed01092118847" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages">
+           28-Jul-2020 01:09:07 AM : <a target="_blank" href="screenshots/screenshot_9.png">Navigated to Account details Screen </a>
+           <br>
+          </div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         And Account activity details displayed is exported to excel<a style="font-size:13px;vertical-align:2px;" id="step314_passed_001092118848" href="javascript:toggle('step314_passed01092118848','step314_passed_001092118848');"> [+]</a>
+         <div id="step314_passed01092118848" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         When I Click Logout option<a style="font-size:13px;vertical-align:2px;" id="step315_passed_001092118849" href="javascript:toggle('step315_passed01092118849','step315_passed_001092118849');"> [+]</a>
+         <div id="step315_passed01092118849" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+        <div id="pass" class="green box padding-logs">
+         Then Successfully logged out from parasbank Site<a style="font-size:13px;vertical-align:2px;" id="step316_passed_001092118850" href="javascript:toggle('step316_passed01092118850','step316_passed_001092118850');"> [+]</a>
+         <div id="step316_passed01092118850" style="display: none; background-color: #bdf5bd; margin-left: 0.5cm; ">
+          <div class="messages"></div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

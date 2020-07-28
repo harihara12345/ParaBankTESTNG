@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 27.718 s <<< FAILURE! - in TestSuite
+Test2(com.internetapp.tests.ParasBankTest)  Time elapsed: 23.882 s  <<< FAILURE!
+java.lang.NullPointerException
+
